@@ -1,0 +1,20 @@
+{
+     "manifest_version": 2,
+
+     "name": "PopupToNewTab",
+     "description": " This Extension disables POPUP.Instead of PopUp, Open in NewTab"
+     "pop ups triggered by click can be able to open New Window. its make us mad. So we need to make window.open not to open new window but to open a new tab ",
+     "version": "1.0",
+
+     "content_scripts": [
+     {
+          "matches": [
+          "http://*/*",
+          "https://*/*"
+           ],
+          "js": ["contents.js"],
+          "run_at": "document_end"
+     }
+     ]
+
+}
