@@ -1,7 +1,15 @@
+document.body.appendChild(function(){
+  sc = document.createElement("script");
+  var code = function(){
+  	window._open = window.open;
+  	window.open = function(){
+  		return window._open.call(this,arguments[0],arguments[1])
+  	}
 
-
-str='window._open = window.open;window.open = function(){ arguments[2] = null; return window._open.apply(this,arguments)}';
-s = document.createElement("script")
-s.innerText = str
-document.body.appendChild(s)
-
+  }
+  src = "("+code.toString()+")()"
+  sc.type="text/javascript";
+  sc.text=src
+  return sc;
+}()
+);
