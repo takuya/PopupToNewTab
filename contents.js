@@ -3,7 +3,7 @@ document.body.appendChild(function(){
   var code = function(){
   	window._open = window.open;
   	window.open = function(){
-  		return window._open.call(this,arguments[0],arguments[1])
+  		return window._open.call(null,arguments[0],arguments[1])
   	}
 
   }
